@@ -12,10 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         (results) => {
           console.log("hello");
-          if (results && results[0] && results[0].result) {
-            words = results[0].result;
-            console.log('Fetched words:', words); // Display the fetched words in the console
-          }
         }
       );
     });
