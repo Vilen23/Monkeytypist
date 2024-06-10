@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const fetchButton = document.getElementById('btn');
-  const startTypingButton = document.getElementById('type');
-
   fetchButton.addEventListener('click', fetchHTML);
-  startTypingButton.addEventListener('click', startTyping);
+
 
   function fetchHTML() {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -40,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2).click();
     let index = 0;
-    const interval = setInterval(() => {
+    setInterval(() => {
       if (index < typing.length) {
         let word = typing[index];
         for (let i = 0; i < word.length; i++) {
