@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "HTML Fetcher for MonkeyType",
+  "version": "1.0",
+  "description": "Fetch HTML content from MonkeyType.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
