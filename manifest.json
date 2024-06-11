@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "HTML Fetcher for MonkeyType",
+  "name": "MonkeyTyper",
   "version": "1.0",
-  "description": "Fetch HTML content from MonkeyType.",
+  "description": "A cheat to be the fastest in monkeytype",
   "permissions": [
     "activeTab",
     "scripting"

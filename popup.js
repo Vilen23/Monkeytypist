@@ -43,8 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
       index++;
-    }, 100)
-    console.log(typing.length)
+    }, 60)
     return typing;
   };
 })
