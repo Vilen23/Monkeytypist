@@ -30,20 +30,24 @@ document.addEventListener("DOMContentLoaded", function () {
         string += letterTag[i].textContent.trim();
       }
       typing.push(string);
-      typing.push(" ");
     }
     document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2).click();
-    let index = 0;
-    setInterval(() => {
-      if (index < typing.length) {
-        let word = typing[index];
-        for (let i = 0; i < word.length; i++) {
-          let char = word[i];
-          document.execCommand('insertText', false, char);
-        }
+    let indexofarray = 0, indexofword = 0;
+    document.addEventListener("keydown", function (event) {
+      let word = typing[indexofarray];
+      let char = word[indexofword];
+      if (indexofword === word.length - 1) {
+        char = " ";
+        document.execCommand('insertText', true, char);
+        console.log(char);
+        indexofarray++;
+        indexofword = 0;
+      } else {
+        document.execCommand('insertText', true, char);
+        indexofword++;
       }
-      index++;
-    }, 60)
+      event.preventDefault();
+    })
     return typing;
   };
 })
