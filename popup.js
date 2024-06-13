@@ -35,18 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
     let indexofarray = 0, indexofword = 0;
     document.addEventListener("keydown", function (event) {
       let word = typing[indexofarray];
-      let char = word[indexofword];
-      if (indexofword === word.length - 1) {
+      let char;
+      if (indexofword === word.length) {
         char = " ";
         document.execCommand('insertText', true, char);
-        console.log(char);
         indexofarray++;
         indexofword = 0;
       } else {
+        char = word[indexofword];
         document.execCommand('insertText', true, char);
         indexofword++;
       }
       event.preventDefault();
+      if (indexofarray === typing.length - 1 && indexofword === typing[indexofarray].length - 1) return;
     })
     return typing;
   };
